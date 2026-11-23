@@ -15,6 +15,7 @@ int main(){
 
     int par_sum=0;
     start= omp_get_wtime();
+    #pragma omp parallel for reduction(+:par_sum)
     for(int i=0;i<SIZE;i++) par_sum+= arr[i];
     double par_time= omp_get_wtime()-start;
 
