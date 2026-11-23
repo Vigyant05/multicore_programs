@@ -15,7 +15,7 @@ int main(){
     pthread_t t[2];
     int data[2]={0,4};
     for(int i=0;i<2;i++) pthread_create(&t[i], NULL, sum_half, &data[i]);
-    for(int i=0;i<2;i++) pthread_join(t[1],NULL);
+    for(int i=0;i<2;i++) pthread_join(t[i],NULL);
 
     printf("Total Sum: %d\n", data[0]+data[1]);
     return 0;
